@@ -25,6 +25,7 @@ def ytb_down(request):
         return render(request, 'pages/home.html', context)
     return render(request, 'pages/home.html')
 
+#ignore this it is not working
 
 def progress_Check(stream = None, chunk = None, file_handle = None, remaining = None):
     #Gets the percentage of the file that has been downloaded.

@@ -8,6 +8,7 @@ import pafy
 
 
 def home(request):
+
     return render(request, 'pages/home.html')
 
 
@@ -17,5 +18,6 @@ def ytb_down(request):
         youtube = pytube.YouTube(url)
         video = youtube.streams.get_highest_resolution()
         video.download()
-        return render(request, 'pages/home.html',)
+        context = {"link":url}
+        return render(request, 'pages/home.html',context)
     return render(request, 'pages/home.html')

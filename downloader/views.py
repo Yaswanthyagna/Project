@@ -2,7 +2,7 @@ from django.shortcuts import render
 from pytube import YouTube
 import pytube
 from django.http import HttpResponse
-import pafy
+from embeddify import Embedder
 
 # Create your views here.
 
@@ -17,7 +17,8 @@ def ytb_down(request):
         url = request.POST.get('ylink')
         youtube = pytube.YouTube(url)
         video = youtube.streams.get_highest_resolution()
+        var = Embedder()
         video.download()
-        context = {"link":url}
-        return render(request, 'pages/home.html',context)
+        context = {"link": var(url)}
+        return render(request, 'pages/home.html', context)
     return render(request, 'pages/home.html')

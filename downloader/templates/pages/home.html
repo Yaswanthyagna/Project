@@ -46,15 +46,14 @@
         <br>
         <div class="form-group">
             <input name="ylink" type="url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="Enter Your Selected Youtube Video Link">           
+                   placeholder="Enter Your Selected Youtube Video Link.">           
         </div>
         <br>
         <center>
             <button type="submit" class="btn btn-danger">Submit</button>
         </center>
     </form>
-    <iframe width="420" height="345" src={{url}}>
-</iframe>       
+    {{link|safe}}      
     <!-- form end here -->
 </div>
 

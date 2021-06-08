@@ -39,21 +39,41 @@
 <div class="container">
 
     <br><br>
-    <center><h1> Enter Only youtube Video Link Here </h1></center>
+    <center><a href= ""><h1>Youtube Video Downloader </h1></a></center>
     <!-- form start here -->
     <form method="post">
         {% csrf_token %}
         <br>
         <div class="form-group">
             <input name="ylink" type="url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="Enter Your Selected Youtube Video Link.">           
+                   placeholder="Enter Only youtube Video Link Here">           
         </div>
         <br>
+        <center><h5>{{title}}</h5></center>
+        <center> {{link|safe}} </center >  
+        <br>
         <center>
-            <button type="submit" class="btn btn-danger">Submit</button>
+        <label>Quality</label>
+        <select>
+            <option>-select-</option>
+            <option value="mp4a">144 Mp4</option>
+            <option value="360">360 Mp4</option>
+            <option value="480">480 Mp4</option>
+            <option value="720">720 Mp4</option>
+            <option value="1080">1080 Mp4</option>
+        </select>
+        <br>
+            <button onclick="clicked()" class="btn btn-danger" >download</button>
+            <br>
+            <center><b>{{completed}}</b></center>       
+            <script type="text/javascript">
+                    function clicked() {
+                    confirm("Your video download has been started");
+                    }
+            </script>
         </center>
     </form>
-    {{link|safe}}      
+   
     <!-- form end here -->
 </div>
 

@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -36,19 +37,39 @@
 <!-- nav bar end here -->
 
 <!-- container start here -->
-<div class="container">
+<div class="container" >
 
     <br><br>
-    <center><a href= ""><h1>Youtube Video Downloader </h1></a></center>
+    <center><a href= "" ><h1 id = "titlew">Youtube Video Downloader </h1></a></center>
     <style>
+    body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  /* The image used */
+  background-image: url("{% static 'images/image.jpg' %}");
+
+  /* Full height */
+  height: 100%;     
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+}
     #link{
-        background-color:   red;
+        
         text-align: center;
         padding :200;
     }
     #adressStore{
         text-align : center;
-        background-color : lightgreen;
+    
+    }
+    h1{
+       color:  red; 
     }
     </style>
     <!-- form start here -->
@@ -82,7 +103,7 @@
             <center><b>{{completed}}</b></center>       
             <script type="text/javascript">
                     function clicked() {
-                    confirm("Your video download has been started");
+                    alert("Your video download has been started");
                     }
             </script>
         </center>

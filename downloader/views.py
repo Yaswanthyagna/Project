@@ -15,12 +15,14 @@ def home(request):
 def ytb_down(request):
     if request.method == 'POST':
         url = request.POST.get('ylink')
+        adress = request.POST.get('adress')
         youtube = pytube.YouTube(url)
         video = youtube.streams.get_highest_resolution()
         var = Embedder()
         global file_size
         file_size = video.filesize
-        context = {"link": var(url),"title":youtube.title,"completed":"Your  video has been downloaded"}  
-        video.download(r"C:\Users\yaswanth\Desktop\ak")
+        context = {"link": var(url), "title": youtube.title,
+                   "completed": "Your  video has been downloaded"}
+        video.download(adress)
         return render(request, 'pages/home.html', context)
     return render(request, 'pages/home.html')

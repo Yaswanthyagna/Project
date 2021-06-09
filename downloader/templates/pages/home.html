@@ -40,13 +40,27 @@
 
     <br><br>
     <center><a href= ""><h1>Youtube Video Downloader </h1></a></center>
+    <style>
+    #link{
+        background-color:   red;
+        text-align: center;
+        padding :200;
+    }
+    #adressStore{
+        text-align : center;
+        background-color : lightgreen;
+    }
+    </style>
     <!-- form start here -->
     <form method="post">
         {% csrf_token %}
         <br>
         <div class="form-group">
-            <input name="ylink" type="url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="Enter Only youtube Video Link Here">           
+            <input name="ylink" type="url" class="form-control" id="link" aria-describedby="youtube link"
+                   placeholder="Enter Only youtube Video Link Here"> 
+                   <br>
+            <input name="adress" type="text" class="form-control" id="adressStore" aria-describedby="adress to store"
+                   placeholder="Enter the path you want to save">           
         </div>
         <br>
         <center><h5>{{title}}</h5></center>
@@ -78,4 +92,3 @@
 </div>
 
 <!-- container end here -->
-
